@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:16
+    container_name: timp-lab1-db
+    environment:
+      POSTGRES_USER: lab1
+      POSTGRES_PASSWORD: lab1
+      POSTGRES_DB: lab1
+    ports:
+      - "55433:5432"
+    volumes:
+      - timp_lab1_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: timp-lab1-backend
+    environment:
+      DATABASE_URL: postgresql+psycopg2://lab1:lab1@db:5432/lab1
+    ports:
+      - "8001:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:8001
+    container_name: timp-lab1-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  timp_lab1_data:

@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f6fa;
+  color: #1f2933;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  background: linear-gradient(135deg, #1a3a6b, #2e5aa8);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.brand {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.add-link {
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.add-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.content {
+  flex: 1;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.incidents-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.incidents-table th,
+.incidents-table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e9f0;
+  font-size: 14px;
+}
+
+.incidents-table th {
+  background: #eef1f7;
+  font-weight: 600;
+}
+
+.incidents-table a {
+  color: #2e5aa8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.row-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.status-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-new {
+  background: #e3e8ff;
+  color: #3948a3;
+}
+
+.status-progress {
+  background: #fff3cd;
+  color: #8a6300;
+}
+
+.status-done {
+  background: #d7f5df;
+  color: #1e7a3c;
+}
+
+.status-closed {
+  background: #e2e5e9;
+  color: #4a5560;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.link-button.danger {
+  color: #c0392b;
+}
+
+.link-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.empty {
+  color: #6b7280;
+}
+
+.error-banner {
+  background: #fdecea;
+  color: #b12a1a;
+  border: 1px solid #f5c6c0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4a5568;
+  padding: 40px 0;
+}
+
+.spinner-circle {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #d3dcec;
+  border-top-color: #2e5aa8;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.detail-card,
+.form-card {
+  background: white;
+  border-radius: 10px;
+  padding: 26px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  max-width: 640px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #2e5aa8;
+  text-decoration: none;
+}
+
+.detail-card dl {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  row-gap: 10px;
+}
+
+.detail-card dt {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.detail-card dd {
+  margin: 0;
+}
+
+.detail-actions,
+.form-actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  background: #2e5aa8;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.button.danger {
+  background: #c0392b;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid #d3dcec;
+  border-radius: 6px;
+  font-weight: normal;
+}
+
+.field-error {
+  color: #c0392b;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.not-found {
+  text-align: center;
+  padding: 60px 0;
+}

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.DS_Store
+
+lab1/screenshots/*.png
+prac3/diagrams/*.png
+prac3/screenshots/*.png
+prac3/screenshots/raw/
